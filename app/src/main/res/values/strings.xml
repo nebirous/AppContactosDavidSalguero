@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">List View v3</string>
+
+    <string name="str_masNum">Números de </string>
+    <string name="action_añadir">Añadir</string>
+    <string name="str_borrar">Borrar</string>
+    <string name="str_editar">Editar</string>
+    <string name="str_insertar">Insertar</string>
+    <string name="str_nombre">Nombre</string>
+    <string name="str_numero">Número</string>
+    <string name="str_opcional">Número (Opcional)</string>
+    <string name="str_datos">Datos de contacto</string>
+    <string name="str_salir">Salir</string>
+    <string name="str_añadir">Tiene que añadir un nombre y un número como mínimo</string>
+
+</resources>
