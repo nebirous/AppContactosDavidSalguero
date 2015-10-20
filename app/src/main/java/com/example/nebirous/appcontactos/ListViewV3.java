@@ -35,7 +35,7 @@ public class ListViewV3 extends AppCompatActivity {
 
         return true;
     }
-    //Contenido del menú de opciones. Solo cuenta con un botón añadir.
+    //Contenido del menú de opciones. Solo cuenta con un botón añadir
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
