@@ -56,7 +56,7 @@ public class Contacto implements Comparable<Contacto>{
                 ", Nombre='" + Nombre + '\'' +
                 '}';
     }
-    //Para dar formato a la cadena de números, para que salgan en diferentes lineas en la ventana
+    //Para dar formato a la cadena de números, para que salgan en diferentes lineas en la ventana.
     public String toStringMod(){
         String numeros = "";
         for(int i = 0; i < nums.size(); i++){

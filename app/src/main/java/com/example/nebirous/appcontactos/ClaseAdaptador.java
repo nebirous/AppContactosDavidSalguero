@@ -88,7 +88,7 @@ public class ClaseAdaptador extends ArrayAdapter<Contacto>{
 
         return true;
     }
-    //Método que crea el diálogo que nos muestra los demás teléfonos
+    //Método que crea el diálogo que nos muestra los demás teléfonos.
     public void mas(View v){
         Contacto aux = agenda.get(v.getId());
         String s= ctx.getString(R.string.str_masNum)+" "+aux.getNombre()+"\n";

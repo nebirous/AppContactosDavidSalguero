@@ -67,7 +67,7 @@ public class FormularioAdd extends AppCompatActivity{
 
         }
     }
-    //Método que utiliza el botón cancelar
+    //Método que utiliza el botón cancelar.
     public void cancel(View v){
         finish();
     }
