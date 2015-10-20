@@ -78,7 +78,7 @@ public class Matriz {
         Collections.sort(agenda);
     }
     //Este método nos permite guardar un contacto modificado sin que se sobreescriba, borrando el anterior y añadiendo uno
-    //nuevo con los datos modificados.
+    //nuevo con los datos modificados
     public static void guardar (Contacto aux){
         borrar(aux);
         agenda.add(aux);
