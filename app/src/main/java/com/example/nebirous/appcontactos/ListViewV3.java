@@ -19,9 +19,7 @@ public class ListViewV3 extends AppCompatActivity {
     private static ClaseAdaptador clAdaptador;
     private List<Contacto> lista;
     private ListView lv;
-    private String num;
     private Intent intent;
-    private Formulario formul;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +27,7 @@ public class ListViewV3 extends AppCompatActivity {
         setContentView(R.layout.activity_contactos_app);
         init();
     }
-
+    //Creación del menú de opciones
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -37,7 +35,7 @@ public class ListViewV3 extends AppCompatActivity {
 
         return true;
     }
-
+    //Contenido del menú de opciones. Solo cuenta con un botón añadir.
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -76,20 +74,14 @@ public class ListViewV3 extends AppCompatActivity {
 
     }
 
-    public void llamar(int posicion){
-        String fono= Matriz.getContacto(posicion).getNumero(0);
-        Uri numero = Uri.parse( "tel:" + fono.toString() );
-        Intent llamar = new Intent(Intent.ACTION_CALL, numero);
-        startActivity(llamar);
-    }
-
+    //Creación del menú contextual
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menucontextual, menu);
     }
-
+    //Menú contextual
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         long id = item.getItemId();
@@ -111,11 +103,21 @@ public class ListViewV3 extends AppCompatActivity {
         return super.onContextItemSelected(item);
 
     }
+    //Llama a la clase mas, la cual se encarga de abrir la ventana que nos muestra todos los teléfonos
+    // de un contacto
     public void ventana(View v){
         clAdaptador.mas(v);
     }
+    //Método utilizado para actualizar la agenda y ordenarla. Es utilizado después de cualquier modificación
     public static void actualiza(){
         Matriz.ordenar();
         clAdaptador.notifyDataSetChanged();
+    }
+    //Método utilizado para que al clicar en un listview se llame al primer número del contacto
+    public void llamar(int posicion){
+        String fono= Matriz.getContacto(posicion).getNumero(0);
+        Uri numero = Uri.parse( "tel:" + fono.toString() );
+        Intent llamar = new Intent(Intent.ACTION_CALL, numero);
+        startActivity(llamar);
     }
 }

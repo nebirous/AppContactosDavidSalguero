@@ -73,13 +73,17 @@ public class Matriz {
     public static Contacto getContacto (int posicion){
         return agenda.get(posicion);
     }
+    //Nos permite ordenar la lista de contactos
     public static void ordenar(){
         Collections.sort(agenda);
     }
+    //Este método nos permite guardar un contacto modificado sin que se sobreescriba, borrando el anterior y añadiendo uno
+    //nuevo con los datos modificados.
     public static void guardar (Contacto aux){
         borrar(aux);
         agenda.add(aux);
     }
+    //Permite borrar un contacto de la agenda.
     public static void borrar(Contacto aux){
         Contacto c;
         for (int i=0; i< agenda.size();i++){

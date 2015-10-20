@@ -35,7 +35,8 @@ public class Formulario extends AppCompatActivity{
         aux = Matriz.getContacto(pos);
         init();
     }
-
+    //Método de inicio. Se diferencia del de Formularioadd porque este recoge los datos del contacto
+    //que le hemos pasado por el bundle y los mete en los campos.
     public void init(){
          nom = (EditText) findViewById(R.id.editText);
          num = (EditText) findViewById(R.id.editText2);
@@ -65,6 +66,7 @@ public class Formulario extends AppCompatActivity{
 //            }
 //        });
     }
+    //Método utilizado por el botón guardar
     public void save(View v){
 
         if(nom.length() == 0 || num.length() == 0){
@@ -90,6 +92,7 @@ public class Formulario extends AppCompatActivity{
 
         }
     }
+    //Método que utiliza el botón cancelar
     public void cancel (View v){
         finish();
     }

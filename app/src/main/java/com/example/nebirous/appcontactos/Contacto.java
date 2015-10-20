@@ -10,14 +10,6 @@ public class Contacto implements Comparable<Contacto>{
     private String Nombre;
     private List<String> nums;
 
-    public List<String> devolverNums(){
-        return nums;
-    }
-
-    public String getNums() {
-        String numeros = toStringMod();
-        return numeros;
-    }
 
     public void setNums(List<String> nums) {
         this.nums = nums;
@@ -39,9 +31,6 @@ public class Contacto implements Comparable<Contacto>{
     }
     public void setNum(List<String> num){
         nums = num;
-    }
-    public int tamNumeros(){
-        return nums.size();
     }
 
     public long getId() {
@@ -67,7 +56,7 @@ public class Contacto implements Comparable<Contacto>{
                 ", Nombre='" + Nombre + '\'' +
                 '}';
     }
-
+    //Para dar formato a la cadena de números, para que salgan en diferentes lineas en la ventana
     public String toStringMod(){
         String numeros = "";
         for(int i = 0; i < nums.size(); i++){
@@ -76,12 +65,10 @@ public class Contacto implements Comparable<Contacto>{
         }
         return numeros;
     }
-
     @Override
     public boolean equals(Object o) {
         return super.equals(o);
     }
-
     @Override
     public int compareTo(Contacto contacto) {
         int r = this.Nombre.compareToIgnoreCase(contacto.Nombre);
@@ -89,5 +76,16 @@ public class Contacto implements Comparable<Contacto>{
             r=(int)(this.id-contacto.id);
         }
         return r;
+    }
+    public List<String> devolverNums(){
+        return nums;
+    }
+    public String getNums() {
+        String numeros = toStringMod();
+        return numeros;
+    }
+    //Devuelve un int con el tamaño del List nums
+    public int tamNumeros(){
+        return nums.size();
     }
 }

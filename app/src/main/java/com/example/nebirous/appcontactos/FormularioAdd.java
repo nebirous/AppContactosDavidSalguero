@@ -41,6 +41,7 @@ public class FormularioAdd extends AppCompatActivity{
         numO2 = (EditText) findViewById(R.id.editText5);
 
     }
+    //Método que utiliza el botón guardar
     public void save(View v){
         aux = new Contacto();
         if(nom.length() == 0 && num.length() == 0){
@@ -66,6 +67,7 @@ public class FormularioAdd extends AppCompatActivity{
 
         }
     }
+    //Método que utiliza el botón cancelar
     public void cancel(View v){
         finish();
     }

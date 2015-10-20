@@ -43,7 +43,6 @@ public class ClaseAdaptador extends ArrayAdapter<Contacto>{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        //1
         ViewHolder gv = new ViewHolder();
         if (convertView == null) {
             convertView = linflater.inflate(res, null);
@@ -78,6 +77,7 @@ public class ClaseAdaptador extends ArrayAdapter<Contacto>{
         //3
         return convertView;
     }
+    //Método utilizado para borrar un contacto de la agenda
     public boolean borrar(int position){
         try{
             agenda.remove(position);
@@ -88,6 +88,7 @@ public class ClaseAdaptador extends ArrayAdapter<Contacto>{
 
         return true;
     }
+    //Método que crea el diálogo que nos muestra los demás teléfonos
     public void mas(View v){
         Contacto aux = agenda.get(v.getId());
         String s= ctx.getString(R.string.str_masNum)+" "+aux.getNombre()+"\n";
